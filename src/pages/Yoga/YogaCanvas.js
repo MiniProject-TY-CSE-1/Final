@@ -16,7 +16,7 @@ import "./YogaCanvas.css";
 let flag = false;
 let skeletonColor = "rgb(255,0,0)";
 
-// eslint-disable-next-line 
+// eslint-disable-next-line
 let interval;
 
 function YogaCanvas() {
@@ -34,25 +34,29 @@ function YogaCanvas() {
     currentPose,
   } = useContext(YogaContext);
 
-  useEffect(() => {
-    const timeDiff = (currentTime - startingTime) / 1000;
-    if (flag) {
-      poseTimefunc(timeDiff);
-    }
-    if ((currentTime - startingTime) / 1000 > bestPerform) {
-      bestPerformfunc(timeDiff);
-    }
-  }, 
-  // eslint-disable-next-line 
-  [currentTime]);
+  useEffect(
+    () => {
+      const timeDiff = (currentTime - startingTime) / 1000;
+      if (flag) {
+        poseTimefunc(timeDiff);
+      }
+      if ((currentTime - startingTime) / 1000 > bestPerform) {
+        bestPerformfunc(timeDiff);
+      }
+    },
+    // eslint-disable-next-line
+    [currentTime]
+  );
 
-  useEffect(() => {
-    currentTimefunc(0);
-    poseTimefunc(0);
-    bestPerformfunc(0);
-  },
- // eslint-disable-next-line 
-  [currentPose]);
+  useEffect(
+    () => {
+      currentTimefunc(0);
+      poseTimefunc(0);
+      bestPerformfunc(0);
+    },
+    // eslint-disable-next-line
+    [currentPose]
+  );
 
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
@@ -237,6 +241,9 @@ function YogaCanvas() {
           </button>
         </div>
         <div className="pose-detection">
+          <div className="pose-img">
+            <img src={poseImages[currentPose]} alt="poses" />
+          </div>
           <div className="detection-container">
             <Webcam
               width={width >= 480 ? "640px" : "360px"}
@@ -252,10 +259,6 @@ function YogaCanvas() {
               width={width >= 480 ? "640px" : "360px"}
               height={width >= 480 ? "480px" : "270px"}
             ></canvas>
-          </div>
-
-          <div className="pose-img" >
-            <img src={poseImages[currentPose]} alt="poses"/>
           </div>
         </div>
       </div>

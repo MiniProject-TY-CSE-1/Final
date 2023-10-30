@@ -1,0 +1,21 @@
+.list-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  height: 100vh;
+}
+.yog-img {
+  height: 8rem;
+}
+.item {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: 1rem;
+  background-color: rgb(239, 232, 224);
+  border: 3px solid rgb(146, 36, 135);
+}

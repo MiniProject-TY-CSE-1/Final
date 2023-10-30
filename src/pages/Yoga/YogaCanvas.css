@@ -4,8 +4,6 @@
       flex-direction: column;
       justify-content:center;
       align-items:center ;
-    }
-    .pose-img{
-        display: none;
+      gap: 2rem;
     }
   }

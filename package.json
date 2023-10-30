@@ -6,8 +6,12 @@
     "@tensorflow-models/pose-detection": "^0.0.6",
     "@tensorflow-models/posenet": "^2.2.2",
     "@tensorflow/tfjs": "^3.10.0",
+    "i18next": "^23.6.0",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-http-backend": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-i18next": "^13.3.1",
     "react-router-dom": "^6.0.0",
     "react-scripts": "^5.0.0",
     "react-webcam": "^6.0.0"

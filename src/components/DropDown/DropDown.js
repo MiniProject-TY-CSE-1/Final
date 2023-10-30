@@ -31,7 +31,6 @@ return (
                             className="dropdown-img"
                             alt="yoga_images"
                         />
-                        
                     </div>
                 </li>
             ))}

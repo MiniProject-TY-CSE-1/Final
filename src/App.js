@@ -5,11 +5,19 @@ import Home from "./pages/Home/Home";
 import Yoga from "./pages/Yoga/Yoga";
 import About from "./pages/About/About";
 import Tutorials from "./pages/Tutorials/Tutorials";
-
+import List from "./components/PoseList/List";
 import "./App.css";
+
 import YogaCanvas from "./pages/Yoga/YogaCanvas";
+import { useTranslation } from "react-i18next";
 
 export default function App() {
+  const { t, i18n } = useTranslation();
+  //Creating a method to change the language onChnage from select box
+  const changeLanguageHandler = (e) => {
+    const languageValue = e.target.value;
+    i18n.changeLanguage(languageValue);
+  };
   return (
     <YogaProvider>
       <Router>
@@ -19,6 +27,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/yoga" element={<YogaCanvas />} />
+          <Route path="/list" element={<List/>} />
         </Routes>
       </Router>
     </YogaProvider>
