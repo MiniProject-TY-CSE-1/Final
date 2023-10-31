@@ -6,6 +6,7 @@ import Yoga from "./pages/Yoga/Yoga";
 import About from "./pages/About/About";
 import Tutorials from "./pages/Tutorials/Tutorials";
 import List from "./components/PoseList/List";
+import Blog from "./pages/Blog/Blog";
 import "./App.css";
 
 import YogaCanvas from "./pages/Yoga/YogaCanvas";
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/yoga" element={<YogaCanvas />} />
           <Route path="/list" element={<List/>} />
+          <Route path="/blogs" element={<Blog/>} />
         </Routes>
       </Router>
     </YogaProvider>
