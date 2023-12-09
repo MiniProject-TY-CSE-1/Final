@@ -3,7 +3,7 @@ import { useContext } from "react";
 import YogaContext from "../../YogaContext";
 import { poseImages } from "../../utils/pose_images";
 import "./List.css";
-import { navigate, useNavigate } from 'react-router-dom';
+import { navigate, useNavigate } from "react-router-dom";
 
 const List = () => {
   const { currentPose, setCurrentPosefunc } = useContext(YogaContext);
@@ -20,7 +20,13 @@ const List = () => {
   return (
     <div className="list-container">
       {poseList.map((pose) => (
-        <button onClick={()=>{setCurrentPosefunc(pose);navigate('/start')}} className="item">
+        <button
+          onClick={() => {
+            setCurrentPosefunc(pose);
+            navigate("/start");
+          }}
+          className="item"
+        >
           <div class="">
             <p className="">{pose}</p>
             <img src={poseImages[pose]} className="yog-img" alt="YogaImage" />

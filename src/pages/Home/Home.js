@@ -5,29 +5,20 @@ import carousel2 from "../../utils/images/carousel2.svg";
 import carousel3 from "../../utils/images/carousel3.svg";
 import Logo from "./../../Assets/Logo.png";
 import "./Home.css";
-
+import Nav from "../../components/Nav";
 export default function Home() {
   return (
     <div className="home-container">
-      <div className="home-header">
-        <div className="home-heading">
-          <img src={Logo} alt="Logo" className="logo" />
-        </div>
-        <Link to="/about">
-          <button className="btn btn-secondary" id="about-btn">
-            About
-          </button>
-        </Link>
-      </div>
+      <Nav></Nav>
       <h1>Bringing the Science to the mat</h1>
       <div className="home-main">
         <div className="carousel-container">
           <div
             id="carouselExampleSlidesOnly"
-            class="carousel slide"
+            className="carousel slide"
             data-bs-ride="carousel"
           >
-            <div class="carousel-inner">
+            {/* <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src={carousel1} id="img-car" class="d-block" alt="..." />
               </div>
@@ -37,18 +28,18 @@ export default function Home() {
               <div class="carousel-item">
                 <img src={carousel3} id="img-car" class="d-block" alt="..." />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="btn-section">
           <Link to="/list">
-            <button className="btn start-btn">Let's Start</button>
+            <button className="start-btn btn-donate">Let's Start</button>
           </Link>
           <Link to="/tutorials">
-            <button className="btn start-btn">Tutorials</button>
+            <button className="start-btn btn-donate">Tutorials</button>
           </Link>
           <Link to="/blogs">
-            <button className="btn start-btn">Blogs</button>
+            <button className="start-btn btn-donate">Posts</button>
           </Link>
         </div>
       </div>

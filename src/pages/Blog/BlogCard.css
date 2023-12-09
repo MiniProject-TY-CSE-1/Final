@@ -1,18 +1,15 @@
 .blog-card {
   display: flex;
   width: 25%;
+  min-width: 10rem;
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.header-blog{
-    text-align: center
 }
 .card {
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,7 +30,6 @@
 
 .card p {
   font-size: 1rem;
-
   margin: 0;
 }
 
@@ -47,4 +43,18 @@
   margin: auto;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+@media screen  and (max-width: 768px) {
+  .blog-card {
+    width: 100%;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  
+}
+
+.modal-desc{
+  text-align: left;
 }

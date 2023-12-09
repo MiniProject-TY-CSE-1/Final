@@ -1,6 +1,7 @@
 import React from "react";
 import BlogCard from "./BlogCard";
 import "./BlogCard";
+import Nav from "../../components/Nav";
 const Blog = () => {
   const blogData = [
     {
@@ -149,8 +150,8 @@ const Blog = () => {
     },
   ];
   return (
-    <div className="">
-      <h1 className="header-blog"> Blogs</h1>
+    <div className="blog-list">
+      <Nav></Nav>
       <div className="blog-app">
         {blogData.map((blog, index) => (
           <BlogCard
