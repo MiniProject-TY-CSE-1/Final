@@ -23,13 +23,13 @@ export default function App() {
     <YogaProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/start" element={<Yoga />} />
           <Route path="/about" element={<About />} />
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/yoga" element={<YogaCanvas />} />
-          <Route path="/list" element={<List/>} />
-          <Route path="/blogs" element={<Blog/>} />
+          <Route path="/list" element={<List />} />
+          <Route path="/blogs" element={<Blog />} />
         </Routes>
       </Router>
     </YogaProvider>

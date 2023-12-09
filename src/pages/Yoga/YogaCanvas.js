@@ -167,6 +167,7 @@ function YogaCanvas() {
         const keypoints = pose[0].keypoints;
         let input = keypoints.map((keypoint) => {
           if (keypoint.score > 0.4) {
+            // console.log(keypoint);
             if (
               !(keypoint.name === "left_eye" || keypoint.name === "right_eye")
             ) {
@@ -224,7 +225,25 @@ function YogaCanvas() {
   };
 
   const width = window.screen.width;
-
+  const landPoints = [
+    { name: "left_ankle", val: false },
+    { name: "left_ear", val: false },
+    { name: "left_elbow", val: false },
+    { name: "left_eye", val: false },
+    { name: "left_hip", val: false },
+    { name: "left_knee", val: false },
+    { name: "left_shoulder", val: false },
+    { name: "left_wrist", val: false },
+    { name: "nose", val: false },
+    { name: "right_ankle", val: false },
+    { name: "right_ear", val: false },
+    { name: "right_elbow", val: false },
+    { name: "right_eye", val: false },
+    { name: "right_hip", val: false },
+    { name: "right_knee", val: false },
+    { name: "right_shoulder", val: false },
+    { name: "right_wrist", val: false },
+  ];
   if (isStartPose) {
     runMovenet();
     return (
@@ -239,6 +258,11 @@ function YogaCanvas() {
           <button onClick={stopPose} className="secondary-btn">
             <Link to="/start">Stop Pose</Link>
           </button>
+        </div>
+        <div>
+          {landPoints.map((key) => {
+            console.log(key);
+          })}
         </div>
         <div className="pose-detection">
           <div className="pose-img">

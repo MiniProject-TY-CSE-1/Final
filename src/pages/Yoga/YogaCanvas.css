@@ -1,9 +1,16 @@
 @media screen and (max-width: 480px) {
-    .pose-detection {
-      display: flex;
-      flex-direction: column;
-      justify-content:center;
-      align-items:center ;
-      gap: 2rem;
-    }
+  .pose-detection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
+}
+
+.correct {
+  color: green;
+}
+.wrong {
+  color: red;
+}
