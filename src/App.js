@@ -13,12 +13,6 @@ import YogaCanvas from "./pages/Yoga/YogaCanvas";
 import { useTranslation } from "react-i18next";
 
 export default function App() {
-  const { t, i18n } = useTranslation();
-  //Creating a method to change the language onChnage from select box
-  const changeLanguageHandler = (e) => {
-    const languageValue = e.target.value;
-    i18n.changeLanguage(languageValue);
-  };
   return (
     <YogaProvider>
       <Router>

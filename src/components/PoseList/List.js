@@ -4,7 +4,7 @@ import YogaContext from "../../YogaContext";
 import { poseImages } from "../../utils/pose_images";
 import "./List.css";
 import { navigate, useNavigate } from "react-router-dom";
-
+import Nav from "../Nav";
 const List = () => {
   const { currentPose, setCurrentPosefunc } = useContext(YogaContext);
   let poseList = [
@@ -18,21 +18,28 @@ const List = () => {
   ];
   const navigate = useNavigate();
   return (
-    <div className="list-container">
-      {poseList.map((pose) => (
-        <button
-          onClick={() => {
-            setCurrentPosefunc(pose);
-            navigate("/start");
-          }}
-          className="item"
-        >
-          <div class="">
-            <p className="">{pose}</p>
+    <div>
+      <Nav />
+      <div className="list-container">
+        {poseList.map((pose) => (
+          <div className="pose-cards">
+            <div class="pose-item">
+              <p className="pose-headline">{pose}</p>
+              <button
+                className="btn-donate"
+                onClick={() => {
+                  setCurrentPosefunc(pose);
+                  navigate("/start");
+                }}
+              >
+                {" "}
+                Detect Pose
+              </button>
+            </div>
             <img src={poseImages[pose]} className="yog-img" alt="YogaImage" />
           </div>
-        </button>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
