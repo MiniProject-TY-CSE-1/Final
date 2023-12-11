@@ -15,6 +15,16 @@ const List = () => {
     "Dog",
     "Shoulderstand",
     "Traingle",
+    //new ones
+    "Tulasana",
+    "ParipurnaNavasana",
+    "Bhekasana",
+    "Anantasana",
+    "Bakasana",
+    "GandaBherundasana",
+    "Krounchasana",
+
+
   ];
   const navigate = useNavigate();
   return (
@@ -28,7 +38,7 @@ const List = () => {
           className="item"
         >
           <div class="">
-            <p className="">{pose}</p>
+            <p className="pose-name">{pose}</p>
             <img src={poseImages[pose]} className="yog-img" alt="YogaImage" />
           </div>
         </button>
