@@ -1,13 +1,11 @@
 import React, { Component, useState } from "react";
-import { Navigate,useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- const navigate  = useNavigate();
+  const navigate = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
-
-    console.log(email, password);
     fetch("http://localhost:5000/login-user", {
       method: "POST",
       crossDomain: true,
@@ -29,7 +27,11 @@ export default function Login() {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
           window.localStorage.setItem("user", data);
-          navigate('/');
+          window.localStorage.setItem("user", {
+            email: email,
+            password: password,
+          });
+          navigate("/");
         } else {
           alert("Invalid Credentials");
         }
