@@ -1,12 +1,14 @@
 import React from 'react'
 
 import './Tutorials.css'
+import Nav from "../../components/Nav";
 
 import { tutorials, fixCamera } from '../../utils/data'
 
 export default function Tutorials() {
     return (
         <div className="tutorials-container">
+           
             <h1 className="tutorials-heading">Basic Tutorials</h1>
             <div className="tutorials-content-container">
                 {tutorials.map((tutorial) => (

@@ -15,6 +15,16 @@ const Nav = () => {
           About
         </button>
       </Link>
+      <Link to="/login">
+        <button className="btn btn-donate btn-secondary" id="about-btn">
+          Login
+        </button>
+      </Link>
+      <Link to="/signup">
+        <button className="btn btn-donate btn-secondary" id="about-btn">
+          SignUp
+        </button>
+      </Link>
     </div>
   );
 };

@@ -1,10 +1,12 @@
 import React from "react";
-
+import Nav from "../../components/Nav";
 import "./About.css";
 
 export default function About() {
   return (
+    
     <div className="about-container">
+      <Nav></Nav>
       <h1 className="about-heading">About</h1>
       <div className="about-main">
         <p className="about-content">
