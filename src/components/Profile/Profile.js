@@ -1,11 +1,15 @@
+
+
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 const Profile = () => {
   const [user, setUser] = useState("");
   const once = 1;
 
   const navigate = useNavigate();
+
   useEffect(() => {
     fetch("http://localhost:5000/userData", {
       method: "POST",
@@ -22,23 +26,30 @@ const Profile = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data.status == "ok") {
+        if (data.status === "ok") {
           console.log(data.data);
           setUser(data.data);
+
+          // Set the user's first name in localStorage
+          localStorage.setItem('user.fname', data.data.fname);
         } else {
           alert("Invalid Credentials");
         }
       });
   }, [once]);
 
-  const handleProfile = ()=>{
+  const handleProfile = () => {
     navigate("/profile");
-  }
+  };
+
   return (
-    <div className="user-profile">
-      <button className="btn-donate" onClick={handleProfile}>{user.fname}</button>
+    <div className="user-profile1">
+      <button className="btn-donate" onClick={handleProfile}>
+        {user.fname}
+      </button>
     </div>
   );
 };
 
 export default Profile;
+

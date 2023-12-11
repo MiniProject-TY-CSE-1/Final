@@ -8,17 +8,27 @@ import Tutorials from "./pages/Tutorials/Tutorials";
 import Login from "./components/Login/login_component";
 import List from "./components/PoseList/List";
 import Blog from "./pages/Blog/Blog";
+import Page from "./components/Profile/Page";
 import Signup from "./components/Signup/signup_component";
 import "./App.css";
+
+
 
 import YogaCanvas from "./pages/Yoga/YogaCanvas";
 import { useTranslation } from "react-i18next";
 
+
 export default function App() {
   return (
+    
     <YogaProvider>
       <Router>
         <Routes>
+        
+       
+        
+        
+      
           <Route path="/" element={<Home/>} />
           <Route path="/start" element={<Yoga />} />
           <Route path="/about" element={<About />} />
@@ -28,9 +38,11 @@ export default function App() {
           <Route path="/blogs" element={<Blog />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>}/>
-          <Route path="/profile" element={<Signup/>}/>
+          <Route path="/profile" element={<Page/>}/>
+        
         </Routes>
       </Router>
     </YogaProvider>
+    
   );
 }
