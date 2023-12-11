@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-
+//https://mp-aaxd.onrender.com
 export default function SignUp() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -16,7 +16,7 @@ export default function SignUp() {
       e.preventDefault();
 
       console.log(fname, lname, email, password);
-      fetch("https://mp-aaxd.onrender.com/register", {
+      fetch("http://localhost:5000/register", {
         method: "POST",
         crossDomain: true,
         headers: {
