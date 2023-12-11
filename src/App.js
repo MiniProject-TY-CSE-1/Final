@@ -5,8 +5,10 @@ import Home from "./pages/Home/Home";
 import Yoga from "./pages/Yoga/Yoga";
 import About from "./pages/About/About";
 import Tutorials from "./pages/Tutorials/Tutorials";
+import Login from "./components/Login/login_component";
 import List from "./components/PoseList/List";
 import Blog from "./pages/Blog/Blog";
+import Signup from "./components/Signup/signup_component";
 import "./App.css";
 
 import YogaCanvas from "./pages/Yoga/YogaCanvas";
@@ -30,6 +32,8 @@ export default function App() {
           <Route path="/yoga" element={<YogaCanvas />} />
           <Route path="/list" element={<List />} />
           <Route path="/blogs" element={<Blog />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Signup/>}/>
         </Routes>
       </Router>
     </YogaProvider>

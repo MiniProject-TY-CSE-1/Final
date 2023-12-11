@@ -7,7 +7,7 @@
 .instruction {
   margin: 10px;
   letter-spacing: 0.5px;
-  color: white;
+  color: rgb(15, 15, 15);
   font-weight: 400;
   margin-top: 20px;
 }
