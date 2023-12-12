@@ -45,7 +45,8 @@ const Profile = () => {
   return (
     <div className="user-profile1">
       <button className="btn-donate" onClick={handleProfile}>
-        {user.fname}
+    
+ {user.fname}
       </button>
     </div>
   );

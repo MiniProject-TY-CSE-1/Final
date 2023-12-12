@@ -1,4 +1,4 @@
-.instructions-list {
+/* .instructions-list {
   width: 40%;
   border-radius: 8px;
   padding: 10px;
@@ -39,4 +39,69 @@
       height: 200px;
       margin-top: 20px;
   }
+} */
+
+:root {
+  --main-text-color: rgb(15, 15, 15);
+  --border-radius: 8px;
+  --padding: 10px;
+  --margin-top: 10px;
+  --small-font-size: 0.75rem;
+  --large-font-size: 1rem;
+  --font-weight: 400;
+  --img-height: 400px;
+  --mobile-img-height: 200px;
+  --img-border-radius: 15px;
+  --font-family: 'Poppins', sans-serif;
 }
+
+body {
+  font-family: var(--font-family);
+}
+
+.instructions-list {
+  font-family: var(--font-family); /* Apply the font to instructions */
+  width: 40%;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  margin-top: var(--margin-top);
+}
+
+.instruction {
+  margin: 10px;
+  letter-spacing: 0.5px;
+  color: var(--main-text-color);
+  font-weight: var(--font-weight);
+  margin-top: 20px;
+}
+
+.instructions-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.pose-demo-img {
+  height: var(--img-height);
+  aspect-ratio: 1;
+  border-radius: var(--img-border-radius);
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .instructions-container {
+    flex-direction: column-reverse;
+  }
+  .instructions-list {
+    width: 100%;
+    font-size: var(--small-font-size);
+    padding: 20px;
+  }
+  .pose-demo-img {
+    height: var(--mobile-img-height);
+    margin-top: 20px;
+  }
+}
+

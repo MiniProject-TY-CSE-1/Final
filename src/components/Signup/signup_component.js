@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+
 //https://mp-aaxd.onrender.com
 export default function SignUp() {
   const [fname, setFname] = useState("");
@@ -46,7 +47,9 @@ export default function SignUp() {
 
   return (
     <div className="auth-wrapper">
+ 
       <div className="auth-inner">
+       
         <form onSubmit={handleSubmit}>
           <h3>Sign Up</h3>
           <div>

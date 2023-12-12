@@ -4,6 +4,8 @@ import carousel1 from "../../utils/images/carousel1.svg";
 import carousel2 from "../../utils/images/carousel2.svg";
 import carousel3 from "../../utils/images/carousel3.svg";
 import Logo from "./../../Assets/Logo.png";
+import Slider from "../../components/Slider/Slider";
+
 import "./Home.css";
 import Nav from "../../components/Nav";
 export default function Home() {
@@ -11,6 +13,7 @@ export default function Home() {
     <div className="home-container">
       <Nav></Nav>
       <h1>Bringing the Science to the mat</h1>
+      
       <div className="home-main">
         <div className="carousel-container">
           <div
@@ -29,8 +32,14 @@ export default function Home() {
                 <img src={carousel3} id="img-car" class="d-block" alt="..." />
               </div>
             </div> */}
+            <Slider></Slider>
           </div>
+          
         </div>
+       <div>
+  
+
+       </div>
         <div className="btn-section">
           <Link to="/list">
             <button className="start-btn btn-donate">Let's Start</button>

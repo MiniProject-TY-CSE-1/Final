@@ -1,0 +1,33 @@
+
+
+#carouselExampleControls {
+   
+       margin: auto; 
+      
+    width: 100%; /* Adjust the width as needed */
+     /* Center the carousel */
+  }
+ 
+  .carousel-inner {
+    border-radius: 10px; /* Optional: Add border-radius to the carousel container */
+  }
+  .carousel-item img {
+    width: 100%;
+    max-width: 100%; /* Add this line to prevent images from getting wider */
+    border-radius: 10px; /* Optional: Add border-radius to the images */
+  }
+  
+  
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%; /* Adjust the width of the navigation buttons */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #333; /* Change the color of the navigation button icons */
+  }
+  
+  /* Optional: Add more styles as needed */
+  
