@@ -5,13 +5,13 @@ import "./Nav.css";
 import Profile from "./Profile/Profile.js";
 
 const Nav = () => {
-  const [isLoggedIn, setLogged] = useState(window.localStorage.getItem("loggedIn"));
-  const navigate = useNavigate();
+  // const [isLoggedIn, setLogged] = useState(window.localStorage.getItem("loggedIn"));
+  // const navigate = useNavigate();
 
-  const handleLogout = () => {
-    setLogged(false);
-    navigate("/");
-  };
+  // const handleLogout = () => {
+  //   setLogged(false);
+  //   navigate("/");
+  // };
   return (
     <div className="home-header">
       <div className="home-heading">
@@ -24,7 +24,7 @@ const Nav = () => {
             About
           </button>
         </Link>
-        {isLoggedIn ? (
+        {/* {isLoggedIn ? (
           <div className="inner-nav">
             <button
               className="btn btn-donate btn-secondary"
@@ -46,8 +46,8 @@ const Nav = () => {
                 SignUp
               </button>
             </Link>
-          </div>
-        )}
+          </div> */}
+        {/* )} */}
       </div>
     </div>
   );

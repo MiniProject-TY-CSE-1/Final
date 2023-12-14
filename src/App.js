@@ -26,9 +26,9 @@ export default function App() {
           <Route path="/yoga" element={<YogaCanvas />} />
           <Route path="/list" element={<List />} />
           <Route path="/blogs" element={<Blog />} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/signup" element={<Signup/>}/>
-          <Route path="/profile" element={<Signup/>}/>
+          {/* <Route path="/login" element={<Login/>} /> */}
+          {/* <Route path="/signup" element={<Signup/>}/> */}
+          {/* <Route path="/profile" element={<Signup/>}/> */}
         </Routes>
       </Router>
     </YogaProvider>

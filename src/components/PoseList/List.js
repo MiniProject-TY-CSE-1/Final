@@ -15,6 +15,16 @@ const List = () => {
     "Dog",
     "Shoulderstand",
     "Traingle",
+    //new ones
+    "Tulasana",
+    "ParipurnaNavasana",
+    "Bhekasana",
+    "Anantasana",
+    "Bakasana",
+    "GandaBherundasana",
+    "Krounchasana",
+
+
   ];
   const navigate = useNavigate();
   return (
