@@ -18,7 +18,6 @@ let skeletonColor = "rgb(255,0,0)";
 
 // eslint-disable-next-line
 let interval;
-
 function YogaCanvas() {
   const {
     stopPose,

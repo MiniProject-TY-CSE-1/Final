@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./BlogCard.css";
-
+import { IoMdClose } from "react-icons/io";
 import Modal from "react-modal";
 import { div } from "@tensorflow/tfjs";
 
@@ -19,12 +19,13 @@ const BlogCard = ({ title, image, description }) => {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      textAlign:"right",
-      margin:"1rem",
-      display:"flex",
-      flexDirection:"column",
-      gap:"1rem",
-      padding:"1rem"
+      textAlign: "right",
+      margin: "1rem",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-end",
+      gap: "1rem",
+      padding: "1rem",
     },
   };
   return (
@@ -46,7 +47,8 @@ const BlogCard = ({ title, image, description }) => {
                 contentLabel="Example Modal"
                 style={customStyles}
               >
-                <button onClick={toggleText} className="btn-donate">Close</button>
+                <IoMdClose className="close-icon" onClick={toggleText} />
+
                 <p className="modal-desc">{description}</p>
               </Modal>
             ) : (

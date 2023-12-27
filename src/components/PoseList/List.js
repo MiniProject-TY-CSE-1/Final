@@ -29,7 +29,6 @@ const List = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <Nav />
       <div className="list-container">
         {poseList.map((pose) => (
           <div className="pose-cards">

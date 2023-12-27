@@ -19,12 +19,6 @@ function Yoga() {
   const { startYoga } = useContext(YogaContext);
   return (
     <div className="yoga-container">
-      <div className="yoga-top">
-         <img src={Logo} className="logo-img"></img>
-
-        {/* <DropDown poseList={poseList} /> */}
-      </div>
-
       <Instructions />
       <div className="button-container">
         <button onClick={startYoga(true)} className="secondary-btn">

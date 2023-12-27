@@ -66,7 +66,7 @@ const Blog = () => {
       Release and repeat on the other leg.`,
     },
     {
-      title: "Tree Pose (Vrksasana)",
+      title: "Vrksasana",
       image:
         "https://tse3.mm.bing.net/th?id=OIP.nThTFhy7pBHB_xxJ8XC6wAHaE8&pid=Api&P=0&h=180",
       description: `Steps : Take a moment to feel both your feet root into the floor, your weight distributed equally on all four corners of each foot.
@@ -151,7 +151,6 @@ const Blog = () => {
   ];
   return (
     <div className="blog-list">
-      <Nav></Nav>
       <div className="blog-app">
         {blogData.map((blog, index) => (
           <BlogCard

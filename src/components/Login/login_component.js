@@ -1,5 +1,7 @@
 import React, { Component, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,15 +25,11 @@ export default function Login() {
       .then((data) => {
         console.log(data, "userRegister");
         if (data.status == "ok") {
-          alert("login successful");
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
-          window.localStorage.setItem("user", data);
-          window.localStorage.setItem("user", {
-            email: email,
-            password: password,
-          });
+          window.localStorage.setItem("email",email);
           navigate("/");
+          // toast.success("Logged In Successfully");
         } else {
           alert("Invalid Credentials");
         }
@@ -40,10 +38,10 @@ export default function Login() {
 
   return (
     <div className="auth-wrapper">
+      <Toaster/>
       <div className="auth-inner">
         <form onSubmit={handleSubmit}>
           <h3 className="text-yellow-500">Login</h3>
-
           <div className="mb-3">
             <label>Email address</label>
             <input
@@ -78,6 +76,7 @@ export default function Login() {
           </div>
 
           <div className="d-grid">
+
             <button type="submit" className="btn btn-danger">
               Submit
             </button>

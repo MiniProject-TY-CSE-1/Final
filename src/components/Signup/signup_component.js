@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 //https://mp-aaxd.onrender.com
+import { Navigate, useNavigate } from "react-router-dom";
 export default function SignUp() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -8,8 +9,9 @@ export default function SignUp() {
   const [userType, setUserType] = useState("");
   const [secretKey, setSecretKey] = useState("");
 
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
-    if (userType == "Admin" && secretKey != "AdarshT") {
+    if (userType == "Admin" && secretKey != "sami") {
       e.preventDefault();
       alert("Invalid Admin");
     } else {
@@ -36,7 +38,11 @@ export default function SignUp() {
         .then((data) => {
           console.log(data, "userRegister");
           if (data.status == "ok") {
-            alert("Registration Successful");
+            if (userType == "Admin") {
+              navigate("/admin");
+            } else {
+              navigate("/login");
+            }
           } else {
             alert("Something went wrong");
           }
@@ -51,7 +57,6 @@ export default function SignUp() {
           <h3>Sign Up</h3>
           <div>
             Register As - &ensp;
-
             <input
               type="radio"
               name="UserType"
@@ -78,7 +83,7 @@ export default function SignUp() {
               />
             </div>
           ) : null}
-<br></br>
+          <br></br>
           <div className="mb-3">
             <label>First name</label>
             <input
@@ -125,7 +130,10 @@ export default function SignUp() {
             </button>
           </div>
           <p className="forgot-password text-right">
-            Already registered <a href="/login" className="signin">sign in?</a>
+            Already registered{" "}
+            <a href="/login" className="signin">
+              sign in?
+            </a>
           </p>
         </form>
       </div>

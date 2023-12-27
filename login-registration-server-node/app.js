@@ -12,12 +12,10 @@ const jwt = require("jsonwebtoken");
 var nodemailer = require("nodemailer");
 
 const JWT_SECRET =
- // "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
- "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY5ODU4ODg3OCwiaWF0IjoxNjk4NTg4ODc4fQ.5Ye9nVTAFYVAxflAOjcXxV_I07Rx_1VtuTJO2ezoMMM"; 
+  // "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
+  "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY5ODU4ODg3OCwiaWF0IjoxNjk4NTg4ODc4fQ.5Ye9nVTAFYVAxflAOjcXxV_I07Rx_1VtuTJO2ezoMMM";
 
-
-const mongoUrl =
-  "mongodb+srv://rutujamadane6865:rutuja@cluster0.k4mce6k.mongodb.net/mp?retryWrites=true&w=majority";
+const mongoUrl = "mongodb://localhost:27017";
 
 mongoose
   .connect(mongoUrl, {
@@ -65,7 +63,7 @@ app.post("/login-user", async (req, res) => {
   }
   if (await bcrypt.compare(password, user.password)) {
     const token = jwt.sign({ email: user.email }, JWT_SECRET, {
-      expiresIn: "15m",
+      expiresIn: "100m",
     });
 
     if (res.status(201)) {
@@ -99,7 +97,7 @@ app.post("/userData", async (req, res) => {
       .catch((error) => {
         res.send({ status: "error", data: error });
       });
-  } catch (error) { }
+  } catch (error) {}
 });
 
 app.listen(5000, () => {
@@ -141,7 +139,7 @@ app.post("/forgot-password", async (req, res) => {
       }
     });
     console.log(link);
-  } catch (error) { }
+  } catch (error) {}
 });
 
 app.get("/reset-password/:id/:token", async (req, res) => {
@@ -212,52 +210,46 @@ app.post("/deleteUser", async (req, res) => {
   }
 });
 
-
 app.post("/upload-image", async (req, res) => {
   const { base64 } = req.body;
   try {
     await Images.create({ image: base64 });
-    res.send({ Status: "ok" })
-
+    res.send({ Status: "ok" });
   } catch (error) {
     res.send({ Status: "error", data: error });
-
   }
-})
+});
 
 app.get("/get-image", async (req, res) => {
   try {
-    await Images.find({}).then(data => {
-      res.send({ status: "ok", data: data })
-    })
-
-  } catch (error) {
-
-  }
-})
+    await Images.find({}).then((data) => {
+      res.send({ status: "ok", data: data });
+    });
+  } catch (error) {}
+});
 
 app.get("/paginatedUsers", async (req, res) => {
   const allUser = await User.find({});
-  const page = parseInt(req.query.page)
-  const limit = parseInt(req.query.limit)
+  const page = parseInt(req.query.page);
+  const limit = parseInt(req.query.limit);
 
-  const startIndex = (page - 1) * limit
-  const lastIndex = (page) * limit
+  const startIndex = (page - 1) * limit;
+  const lastIndex = page * limit;
 
-  const results = {}
-  results.totalUser=allUser.length;
-  results.pageCount=Math.ceil(allUser.length/limit);
+  const results = {};
+  results.totalUser = allUser.length;
+  results.pageCount = Math.ceil(allUser.length / limit);
 
   if (lastIndex < allUser.length) {
     results.next = {
       page: page + 1,
-    }
+    };
   }
   if (startIndex > 0) {
     results.prev = {
       page: page - 1,
-    }
+    };
   }
   results.result = allUser.slice(startIndex, lastIndex);
-  res.json(results)
-})
+  res.json(results);
+});

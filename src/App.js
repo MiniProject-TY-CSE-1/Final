@@ -10,27 +10,33 @@ import List from "./components/PoseList/List";
 import Blog from "./pages/Blog/Blog";
 import Signup from "./components/Signup/signup_component";
 import "./App.css";
-
+import Nav from "./components/Nav";
 import YogaCanvas from "./pages/Yoga/YogaCanvas";
-import { useTranslation } from "react-i18next";
-
+import AdminHome from "./components/Login/adminHome";
+import { ToastContainer, toast } from "react-toastify";
+import Footer from "./components/Footer";
 export default function App() {
   return (
-    <YogaProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/start" element={<Yoga />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/tutorials" element={<Tutorials />} />
-          <Route path="/yoga" element={<YogaCanvas />} />
-          <Route path="/list" element={<List />} />
-          <Route path="/blogs" element={<Blog />} />
-          {/* <Route path="/login" element={<Login/>} /> */}
-          {/* <Route path="/signup" element={<Signup/>}/> */}
-          {/* <Route path="/profile" element={<Signup/>}/> */}
-        </Routes>
-      </Router>
-    </YogaProvider>
+    <div className="App">
+      <YogaProvider>
+        <Router>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/start" element={<Yoga />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/tutorials" element={<Tutorials />} />
+            <Route path="/yoga" element={<YogaCanvas />} />
+            <Route path="/list" element={<List />} />
+            <Route path="/blogs" element={<Blog />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/profile" element={<Signup />} />
+            <Route path="/admin" element={<AdminHome />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </YogaProvider>
+    </div>
   );
 }

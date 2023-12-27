@@ -2,41 +2,15 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Profile = () => {
-  // const [user, setUser] = useState("");
-  // const once = 1;
-
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/userData", {
-  //     method: "POST",
-  //     crossDomain: true,
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json",
-  //       "Access-Control-Allow-Origin": "*",
-  //     },
-  //     body: JSON.stringify({
-  //       token: window.localStorage.getItem("token"),
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data, "userRegister");
-  //       if (data.status == "ok") {
-  //         console.log(data.data);
-  //         setUser(data.data);
-  //       } else {
-  //         alert("Invalid Credentials");
-  //       }
-  //     });
-  // }, [once]);
-
-  // const handleProfile = ()=>{
-  //   navigate("/profile");
-  // }
+  const [user, setUser] = useState(window.localStorage.getItem("email"));
+  const navigate = useNavigate();
+  useEffect(() => {
+    setUser(window.localStorage.getItem("email"));
+  }, [user]);
+  console.log(user);
   return (
     <div className="user-profile">
-      <button className="btn-donate"></button>
+      <button className="btn-donate">{user}</button>
     </div>
   );
 };

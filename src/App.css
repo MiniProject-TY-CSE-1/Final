@@ -11,6 +11,11 @@ body {
   backdrop-filter: blur(3px);
   height: 100vh;
 }
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 /* 
 .btn-donate {
   --clr-font-main: hsla(0 0% 20% / 100);
@@ -182,3 +187,37 @@ body {
 .btn-donate:hover span:after {
   opacity: 1;
 }
+
+@media screen and (max-width: 800px) {
+  .btn-donate {
+    font-size: 12px;
+    padding: 0.7rem;
+  }
+  .blog-card {
+    width: 100%;
+  }
+}
+
+.close-icon {
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+.slide-container {
+  margin-bottom: 1rem;
+  width: 40%;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.footer {
+  width: 100%;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  bottom: 0;
+}
+

@@ -4,32 +4,59 @@ import carousel1 from "../../utils/images/carousel1.svg";
 import carousel2 from "../../utils/images/carousel2.svg";
 import carousel3 from "../../utils/images/carousel3.svg";
 import Logo from "./../../Assets/Logo.png";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 import "./Home.css";
-import Nav from "../../components/Nav";
+
 export default function Home() {
+  const spanStyle = {
+    padding: "20px",
+    background: "#efefef",
+    color: "#000000",
+  };
+
+  const divStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    height: "400px",
+  };
+
+  const slideImages = [
+    {
+      url: "https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?cs=srgb&dl=pexels-prasanth-inturi-1051838.jpg&fm=jpg",
+      caption: "Slide 1",
+    },
+    {
+      url: "https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?cs=srgb&dl=pexels-prasanth-inturi-1051838.jpg&fm=jpg",
+      caption: "Slide 2",
+    },
+    {
+      url: "https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?cs=srgb&dl=pexels-prasanth-inturi-1051838.jpg&fm=jpg",
+      caption: "Slide 3",
+    },
+  ];
+
   return (
     <div className="home-container">
-      <Nav></Nav>
       <h1>Bringing the Science to the mat</h1>
       <div className="home-main">
-        <div className="carousel-container">
-          <div
-            id="carouselExampleSlidesOnly"
-            className="carousel slide"
-            data-bs-ride="carousel"
-          >
-            {/* <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src={carousel1} id="img-car" class="d-block" alt="..." />
+        <div className="slide-container">
+        <Slide arrows={false}>
+            {slideImages.map((slideImage, index) => (
+              <div key={index}>
+                <div
+                  style={{
+                    ...divStyle,
+                    backgroundImage: `url("${slideImage.url}`,
+                  }}
+                >
+                </div>
               </div>
-              <div class="carousel-item">
-                <img src={carousel2} id="img-car" class="d-block" alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img src={carousel3} id="img-car" class="d-block" alt="..." />
-              </div>
-            </div> */}
-          </div>
+            ))}
+          </Slide>
         </div>
         <div className="btn-section">
           <Link to="/list">
@@ -39,7 +66,7 @@ export default function Home() {
             <button className="start-btn btn-donate">Tutorials</button>
           </Link>
           <Link to="/blogs">
-            <button className="start-btn btn-donate">Posts</button>
+            <button className="start-btn btn-donate">Poses</button>
           </Link>
         </div>
       </div>

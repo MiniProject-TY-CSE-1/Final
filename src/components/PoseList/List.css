@@ -4,11 +4,11 @@
   flex-wrap: wrap;
   width: 90%;
   margin: auto;
-  height: 100vh;
 }
 .yog-img {
   height: 15rem;
   width: 15rem;
+  overflow: hidden;
 }
 
 .pose-headline {
@@ -28,6 +28,26 @@
   background-color: rgb(252, 240, 240);
 }
 
-.pose-name{
-  display: ;
+@media screen and (max-width: 768px) {
+  .list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    height: 100vh;
+  }
+  .yog-img {
+    height: 6rem;
+    width: 6rem;
+  }
+  .pose-cards {
+    font-size: 1rem;
+    width: 100%;
+    gap:0.8rem;
+    background: none;
+    padding: 0.6rem;
+    border-radius: 1rem;
+    background-color: rgb(252, 240, 240);
+  }
 }
